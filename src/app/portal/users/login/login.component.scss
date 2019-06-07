@@ -1,0 +1,24 @@
+.form-error {
+    color: red;
+    margin: 8px -84px 10px;
+    padding: 43px 4px 18px 25px;
+    padding-left: -53px;
+    padding-right: -76px;
+    padding-top: 10px;
+    list-style-type: none;
+    font-size: 1em;
+    line-height: 2.9em;
+    opacity: 1;
+    transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }

@@ -1,0 +1,75 @@
+<ul class="nav navbar-nav navbar-right">
+
+  <li>
+    <div>
+      <ul class="dropdown" id="options" style="margin-top: 10px;">
+        <span style="font-size: 18px;color:#19304B;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <em class="icon-user"></em>
+          <p style="display: inline-block; margin-left: 10px;">{{ currentUser?.username }}</p>&ensp;
+        </span>
+        <div class="dropdown-menu" aria-labelledby="options" style="width: 170px">
+          <li class="dropdown-item">
+            <em style="margin-left: 5px" class="icon-user"></em>
+            <a style="display: inline-block" href="javascript:void(0)" [routerLink]="'/app/users/profile'">My Account</a>
+          </li>
+          <li class="dropdown-item">
+            <em style="margin-left: 5px" class="icon-key"></em>
+            <a style="display: inline-block" href="javascript:void(0)" [routerLink]="'/app/password-reset'">Change Password</a>
+          </li>
+          <li class="dropdown-item">
+            <em style="margin-left: 5px" class="icon-logout"></em>
+            <a style="display: inline-block" href="javascript:void(0)" (click)="logout()">Log Out</a>
+          </li>
+        </div>
+      </ul>
+    </div>
+
+  </li>
+</ul>
+<h5 class="heading" style="text-align: center"> Project List </h5>
+
+<p-dataView #dv [value]="list_array" filterBy="brand" [sortField]="sortField" [sortOrder]="sortOrder">
+  <ng-template let-project pTemplate="listItem">
+    <div class="ui-g" style="padding: 2em;border-bottom: 1px solid #d9d9d9">
+
+      <div class="ui-g-12 ui-md-8 project-details">
+        <div class="ui-g-12 ui-md-3" style="text-align:center">
+          <img src="{{project.proj_img}}">
+        </div>
+        <div class="ui-g">
+          <div class="ui-g-2 ui-sm-6">Project </div>
+          <div class="ui-g-10 ui-sm-6">
+            <b>{{project.project_name}}</b>
+          </div>
+          <div class="ui-g-2 ui-sm-6">Project type </div>
+          <div class="ui-g-10 ui-sm-6">
+            <b>{{project.project_type}}</b>
+          </div>
+
+          <div class="ui-g-2 ui-sm-6">Revenue </div>
+          <div class="ui-g-10 ui-sm-6">
+            <b>{{project.revenue}}</b>
+          </div>
+          <div class="ui-g-2 ui-sm-6">Gross Margin </div>
+          <div class="ui-g-10 ui-sm-6">
+            <b>{{project.gross_margin}}</b>
+          </div>
+          <div class="ui-g-2 ui-sm-6">Net Margin </div>
+          <div class="ui-g-10 ui-sm-6">
+            <b>{{project.net_margin}}</b>
+          </div>
+
+          <div class="ui-g-2 ui-sm-6">Total Summary </div>
+          <div class="ui-g-10 ui-sm-6">
+            <b>{{project.total_summary}}</b>
+          </div>
+          <div class="ui-g-2 ui-sm-6">Location </div>
+          <div class="ui-g-10 ui-sm-6">
+            <b>{{project.geo_location}}</b>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+</p-dataView>

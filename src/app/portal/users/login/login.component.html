@@ -1,0 +1,42 @@
+<div class="wrapper" style="background-image: url('/assets/img/indo.jpg');background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;">
+  <div class="block-center mt-xl wd-xl">
+
+
+    <div class="panel panel-dark panel-flat">
+      <div class="panel-heading text-center" style="background-color: white">
+        <a href="javascript:void(0)">
+          <!-- <img class="block-center img-rounded" src="assets/img/indospace_logo_copy.png" style="height: 60px;
+    width: 234px;" alt="Image" /> -->
+        </a>
+      </div>
+
+      <div class="panel-body">
+        <p class="text-center pv">SIGN IN TO CONTINUE.</p>
+
+        <form class="vertical-center">
+          <div class="col-md-4 offset-md-4" [formGroup]="loginForm">
+            <div class="col-8 center-block">
+              <input class="form-control form-control-lg" type="email" name="email" placeholder="Enter username" formControlName="username"
+                required="" />
+            </div>
+            <br>
+
+            <div class="col-8 center-block">
+              <input class="form-control form-control-lg" type="password" name="password" placeholder="Password" formControlName="password"
+                required="" />
+            </div>
+            <br>
+            <div class="col-4 center-block">
+              <button class="btn btn-block btn-primary mt-lg" type="submit" (click)="login(loginForm.value)" >Login</button>
+              <span *ngIf="loginError!= ''" class="form-error"> {{ loginError }} </span>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+</div>
