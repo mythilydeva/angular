@@ -1,0 +1,33 @@
+stages:
+   - Building & migration
+
+build:
+  stage: Building & migration
+  commands:
+     - ls
+     - npm install
+     - ./node_modules/.bin/ng build
+     - ls -al
+     - rm -rf node_modules dist
+     - cd ..
+
+pre-build:
+  script:
+    - ls
+
+post-build:
+  script:
+    - ls -la
+
+projects:
+    - name: Angular
+      platform: node:8.11.4-alpine
+      commands:
+        - apk update && apk add git
+        - CHECKOUT
+        - cd npm install
+      to-start:
+        - ./node_modules/.bin/ng serve --host 0.0.0.0
+      service:
+        - name: devops-angular
+          port: 4200
